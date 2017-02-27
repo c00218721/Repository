@@ -202,7 +202,7 @@ void Game::display()
 
 	m_licenseScreenMessage.setString("license screen man");
 
-	m_hangerScreenMessage.setString("hanger screen man press 1 to go to upgrades and 2 to go to navigation");	//need to clean these up but i have them here so yea....
+	m_hangerScreenMessage.setString("hanger screen man press 1 to go to upgrades and 2 to go to navigation");	
 	
 	m_menuMessage.setString("menu screen press Tab to go to  the hanger");
 
