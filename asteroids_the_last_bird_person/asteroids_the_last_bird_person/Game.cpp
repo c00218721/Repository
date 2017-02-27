@@ -125,7 +125,7 @@ void Game::run()
 	}//end while loop
 }
 
-void Game::keyboardInput()
+void Game::keyboardInput()		//all these change the screens 
 {
 	if ( sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))	//MENU TO HANGER
 	{
@@ -198,7 +198,7 @@ void Game::updateVariables()
 }
 void Game::display()
 {
-	window.clear();
+	window.clear();																						// all these are to print the messages out to the screen
 
 	m_licenseScreenMessage.setString("license screen man");
 
@@ -213,7 +213,7 @@ void Game::display()
 	m_navigationScreenMessage.setString("navigation screen press esc to go back");
 
 
-	if (licenseScreen)
+	if (licenseScreen)				//all these will print hte message to the screen 
 	{
 		window.draw(m_licenseScreenMessage);
 	}
