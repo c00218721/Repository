@@ -58,6 +58,36 @@ Game::Game()
 	m_splashScreenMessage.setCharacterSize(35);
 	m_splashScreenMessage.setColor(sf::Color::White);
 	m_splashScreenMessage.setPosition(300, 300);
+
+	//license screen message
+	m_licenseScreenMessage.setFont(m_font);
+	m_licenseScreenMessage.setCharacterSize(35);
+	m_licenseScreenMessage.setColor(sf::Color::White);
+	m_licenseScreenMessage.setPosition(200, 300);
+
+	//menu screen message
+	m_menuMessage.setFont(m_font);
+	m_menuMessage.setCharacterSize(35);
+	m_menuMessage.setColor(sf::Color::White);
+	m_menuMessage.setPosition(200, 300);
+
+	//hanger screen message
+	m_hangerScreenMessage.setFont(m_font);
+	m_hangerScreenMessage.setCharacterSize(35);
+	m_hangerScreenMessage.setColor(sf::Color::White);
+	m_hangerScreenMessage.setPosition(200, 300);
+
+	//upgrade screen message
+	m_upgradeScreenMessage.setFont(m_font);
+	m_upgradeScreenMessage.setCharacterSize(35);
+	m_upgradeScreenMessage.setColor(sf::Color::White);
+	m_upgradeScreenMessage.setPosition(200, 300);
+
+	//buy screen message
+	m_buyScreenMessage.setFont(m_font);
+	m_buyScreenMessage.setCharacterSize(35);
+	m_buyScreenMessage.setColor(sf::Color::White);
+	m_buyScreenMessage.setPosition(200, 300);
 }
 
 
@@ -113,9 +143,35 @@ void Game::display()
 {
 	window.clear();
 
+	m_licenseScreenMessage.setString("license screen man");
+	m_hangerScreenMessage.setString("hanger screen man press 1 to go to upgrades and 2 to go to navigation");	//need to clean these up but i have them here so yea....
+	m_menuMessage.setString("menu screen bro");
+	m_upgradeScreenMessage.setString("upgrade screen bro");
+	m_buyScreenMessage.setString("buying upgrades screen");
 
+	if (licenseScreen)
+	{
+		window.draw(m_licenseScreenMessage);
+	}
 
+	if (menuScreen)
+	{
+		window.draw(m_menuMessage);
+	}
 
+	if (hangerScreen)
+	{
+		window.draw(m_hangerScreenMessage);
+	}
 
+	if (upgradeScreen)
+	{
+		window.draw(m_upgradeScreenMessage);
+	}
+
+	if (buyScreen)
+	{
+		window.draw(m_buyScreenMessage);
+	}
 	window.display();
 }

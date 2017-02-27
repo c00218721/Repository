@@ -30,6 +30,18 @@ public:
 	sf::Font m_font;	//font for writing text
 
 	sf::Text m_splashScreenMessage;
+	sf::Text m_licenseScreenMessage;
+	sf::Text m_menuMessage;
+	sf::Text m_upgradeScreenMessage;
+	sf::Text m_buyScreenMessage;
+	sf::Text m_hangerScreenMessage;
+
+	//----------------------------------------------------------------------------
+	bool licenseScreen = false;
+	bool menuScreen = false;
+	bool upgradeScreen = false;
+	bool buyScreen = false;
+	bool hangerScreen = true;
 
 public:
 	Game();
