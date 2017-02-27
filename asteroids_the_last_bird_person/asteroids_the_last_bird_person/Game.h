@@ -18,7 +18,7 @@
 #include <iostream>				//adds iostram library
 
 class Game
-{//this is a change
+{
 	//private game members
 
 
@@ -45,7 +45,7 @@ public:
 
 public:
 	Game();
-	void LoadContent();//this is also a change
+	void LoadContent();
 	void run();
 	void keyboardInput();
 	void updateVariables();

@@ -159,7 +159,7 @@ void Game::display()
 		window.draw(m_menuMessage);
 	}
 
-	if (hangerScreen)//this is a change
+	if (hangerScreen)
 	{
 		window.draw(m_hangerScreenMessage);
 	}
