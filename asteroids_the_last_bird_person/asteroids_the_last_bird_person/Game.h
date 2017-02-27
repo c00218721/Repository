@@ -18,7 +18,7 @@
 #include <iostream>				//adds iostram library
 
 class Game
-{
+{//this is a change
 	//private game members
 
 
