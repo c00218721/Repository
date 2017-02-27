@@ -45,7 +45,7 @@ public:
 
 public:
 	Game();
-	void LoadContent();
+	void LoadContent();//this is also a change
 	void run();
 	void keyboardInput();
 	void updateVariables();
