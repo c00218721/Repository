@@ -53,17 +53,6 @@ void Game::LoadContent()
 
 Game::Game()
 {
-	//splash screen message
-	m_splashScreenMessage.setFont(m_font);
-	m_splashScreenMessage.setCharacterSize(35);
-	m_splashScreenMessage.setColor(sf::Color::White);
-	m_splashScreenMessage.setPosition(300, 300);
-
-	//license screen message
-	m_licenseScreenMessage.setFont(m_font);
-	m_licenseScreenMessage.setCharacterSize(35);
-	m_licenseScreenMessage.setColor(sf::Color::White);
-	m_licenseScreenMessage.setPosition(200, 300);
 
 	//menu screen message
 	m_menuMessage.setFont(m_font);
@@ -73,9 +62,9 @@ Game::Game()
 
 	//hanger screen message
 	m_hangerScreenMessage.setFont(m_font);
-	m_hangerScreenMessage.setCharacterSize(35);
+	m_hangerScreenMessage.setCharacterSize(23);
 	m_hangerScreenMessage.setColor(sf::Color::White);
-	m_hangerScreenMessage.setPosition(200, 300);
+	m_hangerScreenMessage.setPosition(025, 300);
 
 	//upgrade screen message
 	m_upgradeScreenMessage.setFont(m_font);
@@ -87,7 +76,7 @@ Game::Game()
 	m_buyScreenMessage.setFont(m_font);
 	m_buyScreenMessage.setCharacterSize(35);
 	m_buyScreenMessage.setColor(sf::Color::White);
-	m_buyScreenMessage.setPosition(200, 300);
+	m_buyScreenMessage.setPosition(300, 300);
 }
 
 
