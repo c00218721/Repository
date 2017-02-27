@@ -35,13 +35,14 @@ public:
 	sf::Text m_upgradeScreenMessage;
 	sf::Text m_buyScreenMessage;
 	sf::Text m_hangerScreenMessage;
-
+	sf::Text m_navigationScreenMessage;
 	//----------------------------------------------------------------------------
 	bool licenseScreen = false;
-	bool menuScreen = false;
+	bool menuScreen = true;
 	bool upgradeScreen = false;
 	bool buyScreen = false;
-	bool hangerScreen = true;
+	bool hangerScreen = false;
+	bool navigationScreen = false;
 
 public:
 	Game();

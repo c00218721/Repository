@@ -56,9 +56,9 @@ Game::Game()
 
 	//menu screen message
 	m_menuMessage.setFont(m_font);
-	m_menuMessage.setCharacterSize(35);
+	m_menuMessage.setCharacterSize(23);
 	m_menuMessage.setColor(sf::Color::White);
-	m_menuMessage.setPosition(200, 300);
+	m_menuMessage.setPosition(100, 300);
 
 	//hanger screen message
 	m_hangerScreenMessage.setFont(m_font);
@@ -68,15 +68,21 @@ Game::Game()
 
 	//upgrade screen message
 	m_upgradeScreenMessage.setFont(m_font);
-	m_upgradeScreenMessage.setCharacterSize(35);
+	m_upgradeScreenMessage.setCharacterSize(23);
 	m_upgradeScreenMessage.setColor(sf::Color::White);
-	m_upgradeScreenMessage.setPosition(200, 300);
+	m_upgradeScreenMessage.setPosition(025, 300);
 
 	//buy screen message
 	m_buyScreenMessage.setFont(m_font);
-	m_buyScreenMessage.setCharacterSize(35);
+	m_buyScreenMessage.setCharacterSize(23);
 	m_buyScreenMessage.setColor(sf::Color::White);
-	m_buyScreenMessage.setPosition(300, 300);
+	m_buyScreenMessage.setPosition(025, 300);
+
+	//navigation screen message
+	m_navigationScreenMessage.setFont(m_font);
+	m_navigationScreenMessage.setCharacterSize(23);
+	m_navigationScreenMessage.setColor(sf::Color::White);
+	m_navigationScreenMessage.setPosition(025, 300);
 }
 
 
@@ -121,7 +127,69 @@ void Game::run()
 
 void Game::keyboardInput()
 {
+	if ( sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))	//MENU TO HANGER
+	{
+		if (menuScreen == true)
+		{
+			menuScreen = false;
+			hangerScreen = true;
+		}
+	}
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))	//HANGER TO UPGRADE
+	{
+		if (hangerScreen == true)
+		{
+			hangerScreen = false;
+			upgradeScreen = true;
+		}
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))// HANGER TO NAVIGATION
+	{
+		if (hangerScreen == true)
+		{
+			hangerScreen = false;
+			navigationScreen = true;
+		}
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))//navigation to hanger
+	{
+		if (navigationScreen)
+		{
+			navigationScreen = false;
+			hangerScreen = true;
+		}
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))	// UPGRADE TO SHOP
+	{
+		if (upgradeScreen)
+		{
+			upgradeScreen = false;
+			buyScreen = true;
+		}
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace))//upgrade to hanger
+	{
+		if (upgradeScreen)
+		{
+			upgradeScreen = false;
+			hangerScreen = true;
+		}
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))	//SHOP TO UPGRADE
+	{
+		if (buyScreen == true)
+		{
+			upgradeScreen = true;
+			buyScreen = false;
+		}
+	}
+	
 }
 
 void Game::updateVariables()
@@ -133,10 +201,17 @@ void Game::display()
 	window.clear();
 
 	m_licenseScreenMessage.setString("license screen man");
+
 	m_hangerScreenMessage.setString("hanger screen man press 1 to go to upgrades and 2 to go to navigation");	//need to clean these up but i have them here so yea....
-	m_menuMessage.setString("menu screen bro");
-	m_upgradeScreenMessage.setString("upgrade screen bro");
-	m_buyScreenMessage.setString("buying upgrades screen");
+	
+	m_menuMessage.setString("menu screen press Tab to go to  the hanger");
+
+	m_upgradeScreenMessage.setString("upgrade screen press 3 to go to the shop and backspace to go back");
+
+	m_buyScreenMessage.setString("shop screen press esc to go back");
+
+	m_navigationScreenMessage.setString("navigation screen press esc to go back");
+
 
 	if (licenseScreen)
 	{
@@ -161,6 +236,11 @@ void Game::display()
 	if (buyScreen)
 	{
 		window.draw(m_buyScreenMessage);
+	}
+
+	if (navigationScreen)
+	{
+		window.draw(m_navigationScreenMessage);
 	}
 	window.display();
 }
