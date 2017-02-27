@@ -64,7 +64,7 @@ Game::Game()
 	m_hangerScreenMessage.setFont(m_font);
 	m_hangerScreenMessage.setCharacterSize(23);
 	m_hangerScreenMessage.setColor(sf::Color::White);
-	m_hangerScreenMessage.setPosition(025, 300);
+	m_hangerScreenMessage.setPosition(025, 300);//
 
 	//upgrade screen message
 	m_upgradeScreenMessage.setFont(m_font);
